@@ -9,7 +9,7 @@ var addNote = (title, body) => {
         body
     }
     var duplicateNotes = notes.filter((note) => note.title === title);
-    if(duplicateNotes.length == 0) {
+    if (duplicateNotes.length == 0) {
         notes.push(note);
         writeToFile(notes);
         return note;
@@ -21,12 +21,12 @@ var removeNote = (title) => {
     var uniqueNotes = notes.filter((note) => note.title !== title);
     writeToFile(uniqueNotes);
     return notes.length !== uniqueNotes.length;
-    
+
 }
 
 var getAll = () => {
     console.log('Getting all notes...');
-    var notes  = readFromFile();
+    var notes = readFromFile();
     console.log(`Total: ${notes.length} notes.`);
     _.forEach(notes, (note) => {
         printNote(note);
@@ -43,7 +43,7 @@ var readFromFile = () => {
     try {
         var notesString = fs.readFileSync(filePath);
         return JSON.parse(notesString);
-    }catch(e) {
+    } catch (e) {
         return [];
     }
 }
@@ -55,7 +55,7 @@ var writeToFile = (notes) => {
 var printNote = (note) => {
     console.log('----');
     console.log('Title: ' + note.title);
-    console.log('Body: ' + note.body );
+    console.log('Body: ' + note.body);
 }
 
 module.exports = {
