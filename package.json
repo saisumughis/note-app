@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/saisumughis/note-app#readme",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "yargs": "^10.0.3"
   }
 }
